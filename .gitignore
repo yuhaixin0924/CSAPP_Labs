@@ -3,3 +3,6 @@ datalab-handout/dlc
 datalab-handout/fshow
 datalab-handout/ishow
 .DS_Store
+.vscode/
+bomb/bomb.rzdb
+target1/cookie.txt

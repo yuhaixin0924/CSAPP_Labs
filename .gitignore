@@ -2,7 +2,33 @@ datalab-handout/btest
 datalab-handout/dlc
 datalab-handout/fshow
 datalab-handout/ishow
+# macOS / 编辑器
 .DS_Store
 .vscode/
+*.swp
+*~
+#bomb
 bomb/bomb.rzdb
 target1/cookie.txt
+#arch
+# 编译产物
+archlab-handout/sim/**/*.o
+archlab-handout/sim/**/*.yo
+
+# 模拟器可执行文件
+archlab-handout/sim/pipe/psim
+archlab-handout/sim/seq/ssim
+archlab-handout/sim/misc/yas
+archlab-handout/sim/misc/yis
+archlab-handout/sim/misc/hcl2c
+
+# HCL 自动生成的 C 文件
+archlab-handout/sim/pipe/pipe-full.c
+archlab-handout/sim/seq/seq-full.c
+
+# ncopy 自动生成的测试驱动
+archlab-handout/sim/pipe/sdriver.*
+archlab-handout/sim/pipe/ldriver.*
+archlab-handout/sim/pipe/cdriver*
+archlab-handout/sim/ptest/*.ys
+archlab-handout/sim/ptest/*.yo

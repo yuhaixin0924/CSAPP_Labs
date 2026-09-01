@@ -1,0 +1,66 @@
+##################################################################
+# copy.ys
+#long copy_block(long *src, long *dest, long len)
+#{
+#    long result = 0;
+#
+#    while (len > 0) {
+#        long val = *src++;
+#        *dest++ = val;
+#        result ^= val;
+#        len--;
+#    }
+#
+#   return result;
+#}
+##################################################################
+
+.pos 0
+    irmovq Stack, %rsp      # 初始化栈
+    irmovq src, %rdi       # 第一个参数：数组首地址
+    irmovq dest,%rsi
+    mrmovq len,%rdx
+    call copy_block
+    halt
+
+##################################################################
+# long copy_block(long *src, long *dest, long len)
+# %rdi = src
+# %rax = result
+# %rsi = dest
+# %rdx = len
+##################################################################
+copy_block:
+    	xorq %rax, %rax         # result = 0
+	irmovq $8,%r8
+	irmovq $1,%r9
+Loop:
+	andq %rdx,%rdx
+	je Done
+	mrmovq 0(%rdi),%r10
+	addq %r8,%rdi
+	rmmovq %r10,0(%rsi)
+	addq %r8,%rsi
+	xorq %r10,%rax
+	subq %r9,%rdx
+	jmp Loop
+Done:
+    ret
+
+##################################################################
+# 测试数组
+##################################################################
+.align 8
+len:
+	.quad 3
+src:
+    	.quad 0x00a
+	.quad 0x0b0
+	.quad 0xc00
+dest: 
+
+##################################################################
+# 栈
+##################################################################
+.pos 0x200
+Stack:

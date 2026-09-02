@@ -32,3 +32,20 @@ archlab-handout/sim/pipe/ldriver.*
 archlab-handout/sim/pipe/cdriver*
 archlab-handout/sim/ptest/*.ys
 archlab-handout/sim/ptest/*.yo
+# Cache Lab：编译产物
+cachelab-handout/csim
+cachelab-handout/test-trans
+cachelab-handout/tracegen
+cachelab-handout/*.o
+cachelab-handout/*.dSYM/
+
+# Cache Lab：测试生成的 trace 和结果
+cachelab-handout/trace.tmp
+cachelab-handout/trace.all
+cachelab-handout/trace.f*
+cachelab-handout/.csim_results
+cachelab-handout/.marker
+
+# Cache Lab：提交压缩包
+cachelab-handout/*-handin.tar
+cachelab-handout/*.tar

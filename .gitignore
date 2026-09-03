@@ -49,3 +49,13 @@ cachelab-handout/.marker
 # Cache Lab：提交压缩包
 cachelab-handout/*-handin.tar
 cachelab-handout/*.tar
+# Shell Lab：本地编译产物
+shlab-handout/tsh
+shlab-handout/myspin
+shlab-handout/mysplit
+shlab-handout/mystop
+shlab-handout/myint
+shlab-handout/*.o
+shlab-handout/*.dSYM/
+shlab-handout/core
+shlab-handout/core.*

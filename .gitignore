@@ -59,3 +59,14 @@ shlab-handout/*.o
 shlab-handout/*.dSYM/
 shlab-handout/core
 shlab-handout/core.*
+
+# Malloc Lab：本地编译产物
+malloclab-handout/mdriver
+malloclab-handout/*.o
+malloclab-handout/*.dSYM/
+
+# Malloc Lab：提交包、日志和崩溃文件
+malloclab-handout/*-handin.tar
+malloclab-handout/*.log
+malloclab-handout/core
+malloclab-handout/core.*

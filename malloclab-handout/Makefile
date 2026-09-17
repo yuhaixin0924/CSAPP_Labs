@@ -5,8 +5,11 @@ TEAM = bovik
 VERSION = 1
 HANDINDIR = /afs/cs.cmu.edu/academic/class/15213-f01/malloclab/handin
 
-CC = gcc
-CFLAGS = -Wall -O2 -m32
+# The original 2002 handout forced a 32-bit x86 build with -m32.
+# That cannot be linked on modern Apple Silicon Macs.  Keep the build native;
+# callers can still override either variable (for example: make CC=gcc-14).
+CC ?= cc
+CFLAGS ?= -Wall -Wextra -O2
 
 OBJS = mdriver.o mm.o memlib.o fsecs.o fcyc.o clock.o ftimer.o
 
@@ -27,4 +30,9 @@ handin:
 clean:
 	rm -f *~ *.o mdriver
 
+.PHONY: check clean handin
+
+check: mdriver
+	./mdriver -V -f short1-bal.rep
+	./mdriver -V -f short2-bal.rep
 
